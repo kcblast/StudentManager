@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>Application_API_Domain</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Application-API-Core\Application-API-Core.csproj" />
+    <ProjectReference Include="..\Application-API-Data\Application-API-Data.csproj" />
+  </ItemGroup>
+
+</Project>
