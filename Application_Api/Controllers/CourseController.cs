@@ -81,23 +81,25 @@ namespace Application_Api.Controllers
             }
         }
 
-        //[HttpDelete]
-        //[Route("{courseId}/delete")]
-        //public IActionResult DeleteCourse(Guid courseId)
-        //{
-        //    try
-        //    {
-        //        if (!_manager.CourseExist(courseId))
-        //        {
-        //            return NotFound();
-        //        }
-        //        var result = _manager.DeleteCourse
+        [HttpDelete]
+        [Route("{courseId}/delete")]
+        public ActionResult DeleteCourse(Guid courseId)
+        {
+            try
+            {
+                if (!_manager.CourseExist(courseId))
+                {
+                    return NotFound();
+                }
+                //var result = _manager.GetCourse(courseId);
+                _manager.DeleteCourse(courseId);
+                return NoContent();
 
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw new Exception(ex.Message);
-        //    }
-        //}
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }

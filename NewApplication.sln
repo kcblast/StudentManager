@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application-API-Domain", "A
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application-API-Data", "Application-API-Data\Application-API-Data.csproj", "{80A35CA0-1A61-40BD-B620-346A7FBDC1CD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application_Api", "Application_Api\Application_Api.csproj", "{57AF0AA2-2BC6-4C9B-9AA0-01A33D6AB465}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application_Api", "Application_Api\Application_Api.csproj", "{57AF0AA2-2BC6-4C9B-9AA0-01A33D6AB465}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolManagementUI", "SchoolManagementUI\SchoolManagementUI.csproj", "{6F30A8BD-C0DB-4795-A6F7-2C481E72D4E8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{57AF0AA2-2BC6-4C9B-9AA0-01A33D6AB465}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{57AF0AA2-2BC6-4C9B-9AA0-01A33D6AB465}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{57AF0AA2-2BC6-4C9B-9AA0-01A33D6AB465}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F30A8BD-C0DB-4795-A6F7-2C481E72D4E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F30A8BD-C0DB-4795-A6F7-2C481E72D4E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F30A8BD-C0DB-4795-A6F7-2C481E72D4E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F30A8BD-C0DB-4795-A6F7-2C481E72D4E8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

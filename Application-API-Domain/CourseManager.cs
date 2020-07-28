@@ -63,6 +63,24 @@ namespace Application_API_Domain
             }
         }
 
+        public Course GetCourse(Guid CourseId)
+        {
+            try
+            {
+                var result = _context.Courses.FirstOrDefault(a => a.CourseId == CourseId);
+                if (result == null)
+                {
+                    return null;
+                }
+                return result;
+
+                
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
         public Course GetCourseForStudent(Guid StudentId, Guid CourseId)
         {
             //try
@@ -144,7 +162,7 @@ namespace Application_API_Domain
             }
         }
 
-        public IEnumerable<Course> GetCourse(Guid StudentId)
+        public IEnumerable<Course> GetCourses(Guid StudentId)
         {
             throw new NotImplementedException();
             //try
