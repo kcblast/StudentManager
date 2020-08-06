@@ -26,19 +26,20 @@ namespace Application_Api.Controllers
 
         [HttpGet]
         //[Route("students")]
-        public ActionResult<IEnumerable<StudentDto>> GetStudents()
+        public async Task<ActionResult<IEnumerable<StudentDto>>> GetStudents()
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    var result = _manager.GetStudents();
-                    var studentdto = new List<StudentDto>();
+                    var result = await _manager.GetStudentsAsync();
+                   // var studentdto = new List<StudentDto>();
                     if (result == null)
                     {
                         return NotFound("Students unavailable");
                     }
-                    return Ok(_mapper.Map<IEnumerable<StudentDto>>(result));
+                   // return Ok(_mapper.Map<IEnumerable<StudentDto>>(result));
+                    return Ok(result);
                 }
                 return null;
             }
@@ -50,13 +51,13 @@ namespace Application_Api.Controllers
 
         [HttpGet]
         [Route("{StudentId}", Name = "GetStudent")]
-        public IActionResult GetStudentById(Guid StudentId)
+        public async Task<IActionResult> GetStudentById(Guid StudentId)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    var result = _manager.GetStudentById(StudentId);
+                    var result = await _manager.GetStudentByIdAsync(StudentId);
                   
                     if (result == null)
                     {
@@ -78,7 +79,7 @@ namespace Application_Api.Controllers
         {
             try
             {
-                var result = _manager.GetStudentById(StudentId);
+                var result = _manager.GetStudentByIdAsync(StudentId);
                 if (ModelState.IsValid)
                 {
                     _manager.DeleteStudent(StudentId);
@@ -92,39 +93,39 @@ namespace Application_Api.Controllers
             }
         }
 
-        [HttpPost]
-        [Route("Register")]
-        public ActionResult<StudentDto> RegisterStudent(RegisterStudentDto student)
-        {
-            try
-            {
-                if(ModelState.IsValid)
-                {
-                    if(_manager.IsStudentExist(student.MatricNumber))
-                    {
-                        return BadRequest("Student Already Exist");
-                    }
+        //[HttpPost]
+        //[Route("Register")]
+        //public ActionResult<StudentDto> RegisterStudent(RegisterStudentDto student)
+        //{
+        //    try
+        //    {
+        //        if(ModelState.IsValid)
+        //        {
+        //            if(_manager.IsStudentExist(student.MatricNumber))
+        //            {
+        //                return BadRequest("Student Already Exist");
+        //            }
                     
-                    var studentEntities = _mapper.Map<Student>(student);
-                    _manager.RegisterStudent (studentEntities);
+        //            var studentEntities = _mapper.Map<Student>(student);
+        //            _manager.RegisterStudent (studentEntities);
 
-                    var studentToReturn = _mapper.Map<StudentDto>(studentEntities);
-                    return CreatedAtRoute("GetStudent", new { StudentId = studentToReturn.StudentId}, studentToReturn);
+        //            var studentToReturn = _mapper.Map<StudentDto>(studentEntities);
+        //            return CreatedAtRoute("GetStudent", new { StudentId = studentToReturn.StudentId}, studentToReturn);
 
 
-                    //_manager.RegisterStudent(stud);
-                    //return CreatedAtRoute("GetStudentById", new { student.StudentId }, student);
-                }
-                else
-                {
-                    return BadRequest("Student Already Exist");
-                }
-            }
-            catch(Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
+        //            //_manager.RegisterStudent(stud);
+        //            //return CreatedAtRoute("GetStudentById", new { student.StudentId }, student);
+        //        }
+        //        else
+        //        {
+        //            return BadRequest("Student Already Exist");
+        //        }
+        //    }
+        //    catch(Exception ex)
+        //    {
+        //        throw new Exception(ex.Message);
+        //    }
 
-        }
+        //}
     }
 }

@@ -1,0 +1,44 @@
+﻿@model Application_API_Core.ViewModels.StudentDto
+
+@{
+    ViewData["Title"] = "GetStudentById";
+
+}
+<div>
+    @if(Model != null)
+    {
+        <div>
+            <table>
+                <tr>
+                    <th>
+                        First Name
+                    </th>
+                    <th>
+                        Last Name
+                    </th>
+                    <th>
+                        Matric Number
+                    </th>
+                    <th>
+                        Student Level
+                    </th>
+                </tr>
+
+                <tr>
+                    <td>
+                       @Model.FirstName
+                    </td>
+                    <td>
+                        @Model.LastName
+                    </td>
+                    <td>
+                        @Model.MatricNumber
+                    </td>
+                    <td>
+                        @Model.StudentLevel
+                    </td>
+                </tr>
+            </table>
+        </div>
+    }
+</div>
