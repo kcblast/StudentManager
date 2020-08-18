@@ -2,14 +2,14 @@
    
 @{
     ViewData["Title"] = "GetAllStudents";
-
+    Layout = "_Layout";
 }
 
 <div>
     @if(Model.Students != null)
     {
-        <div>
-            <table>
+        <div class="container">
+            <table class="table">
                 <tr>
                     <th>
                        First Name

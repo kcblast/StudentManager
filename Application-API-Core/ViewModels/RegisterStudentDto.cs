@@ -8,6 +8,7 @@ namespace Application_API_Core.ViewModels
 {
    public class RegisterStudentDto
     {
+        //public Guid ID { get; set; } = Guid.NewGuid();
         [Required]
         public string FirstName { get; set; }
         [Required]

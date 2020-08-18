@@ -19,14 +19,14 @@ namespace Application_API_Domain
         {
             _context = context;
         }
-        public void DeleteStudent(Guid StudentId)
+        public async Task DeleteStudentAsync(Guid StudentId)
         {
             try
             {
-                var stud = _context.Students.Find(StudentId);
+                var stud = await _context.Students.FindAsync(StudentId);
                
-                _context.Remove(stud);
-                _context.SaveChanges();
+                 _context.Remove(stud);
+               await _context.SaveChangesAsync();
             }
             catch (Exception ex)
             {
@@ -73,7 +73,7 @@ namespace Application_API_Domain
             }
         }
 
-        public void RegisterStudent(Student student)
+        public async Task RegisterStudentAsync(Student student)
         {
             try
             {
@@ -90,7 +90,7 @@ namespace Application_API_Domain
                     _context.Students.Add(stud);
                 
                 
-                _context.SaveChanges();
+               await _context.SaveChangesAsync();
                
             }
             catch (Exception ex)
@@ -99,18 +99,18 @@ namespace Application_API_Domain
             }
         }
 
-        public void UpdateStudent(Guid StudentId, Student student)
+        public async Task UpdateStudentAsync(Guid StudentId, Student student)
         {
             try
             {
-                var stud = _context.Students.FirstOrDefault(a => a.StudentId == StudentId);
+                var stud = await _context.Students.FirstOrDefaultAsync(a => a.StudentId == StudentId);
 
                 if(stud == null)
                 {
                     throw new ArgumentNullException("Student doesn't exist");
                 }
                 _context.Students.Add(stud);
-                _context.SaveChanges();
+               await _context.SaveChangesAsync();
             }
             catch (Exception ex)
             {
@@ -118,13 +118,13 @@ namespace Application_API_Domain
             }
         }
 
-        public bool IsStudentExist(string matricNumber)
+        public async Task<bool> IsStudentExistAsync(string matricNumber)
         {
 
        
             try
             {
-                if(_context.Students.Any(a => a.MatricNumber == matricNumber ))
+                if( await _context.Students.AnyAsync(a => a.MatricNumber == matricNumber ))
                 {
                     return true;
                 }
@@ -141,19 +141,9 @@ namespace Application_API_Domain
         //    throw new NotImplementedException();
         //}
 
-        Task IStudentManager.RegisterStudent(Student student)
-        {
-            throw new NotImplementedException();
-        }
 
-        Task IStudentManager.UpdateStudent(Guid StudentId, Student student)
-        {
-            throw new NotImplementedException();
-        }
+       
 
-        Task<bool> IStudentManager.IsStudentExist(string matricNumber)
-        {
-            throw new NotImplementedException();
-        }
+       
     }
 }

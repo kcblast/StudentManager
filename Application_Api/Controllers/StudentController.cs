@@ -75,14 +75,14 @@ namespace Application_Api.Controllers
 
         [HttpDelete]
         [Route("delete/{StudentId}")]
-        public IActionResult DeleteStudent(Guid StudentId)
+        public async Task<IActionResult> DeleteStudent(Guid StudentId)
         {
             try
             {
-                var result = _manager.GetStudentByIdAsync(StudentId);
+                var result = await _manager.GetStudentByIdAsync(StudentId);
                 if (ModelState.IsValid)
                 {
-                    _manager.DeleteStudent(StudentId);
+                    await _manager.DeleteStudentAsync(StudentId);
                     return NoContent();
                 }
                 return BadRequest(ModelState);
@@ -93,39 +93,39 @@ namespace Application_Api.Controllers
             }
         }
 
-        //[HttpPost]
-        //[Route("Register")]
-        //public ActionResult<StudentDto> RegisterStudent(RegisterStudentDto student)
-        //{
-        //    try
-        //    {
-        //        if(ModelState.IsValid)
-        //        {
-        //            if(_manager.IsStudentExist(student.MatricNumber))
-        //            {
-        //                return BadRequest("Student Already Exist");
-        //            }
-                    
-        //            var studentEntities = _mapper.Map<Student>(student);
-        //            _manager.RegisterStudent (studentEntities);
+        [HttpPost]
+        [Route("Register")]
+        public async Task<ActionResult<StudentDto>> RegisterStudentAsync(RegisterStudentDto student)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    if (await _manager.IsStudentExistAsync(student.MatricNumber))
+                    {
+                        return BadRequest("Student Already Exist");
+                    }
 
-        //            var studentToReturn = _mapper.Map<StudentDto>(studentEntities);
-        //            return CreatedAtRoute("GetStudent", new { StudentId = studentToReturn.StudentId}, studentToReturn);
+                    var studentEntities = _mapper.Map<Student>(student);
+                    await _manager.RegisterStudentAsync(studentEntities);
+
+                    var studentToReturn = _mapper.Map<StudentDto>(studentEntities);
+                    return CreatedAtRoute("GetStudent", new { StudentId = studentToReturn.StudentId }, studentToReturn);
 
 
-        //            //_manager.RegisterStudent(stud);
-        //            //return CreatedAtRoute("GetStudentById", new { student.StudentId }, student);
-        //        }
-        //        else
-        //        {
-        //            return BadRequest("Student Already Exist");
-        //        }
-        //    }
-        //    catch(Exception ex)
-        //    {
-        //        throw new Exception(ex.Message);
-        //    }
+                    //_manager.RegisterStudent(stud);
+                    //return CreatedAtRoute("GetStudentById", new { student.StudentId }, student);
+                }
+                else
+                {
+                    return BadRequest("Student Already Exist");
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
 
-        //}
+        }
     }
 }

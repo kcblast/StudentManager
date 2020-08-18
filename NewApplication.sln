@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application-API-Data", "App
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application_Api", "Application_Api\Application_Api.csproj", "{57AF0AA2-2BC6-4C9B-9AA0-01A33D6AB465}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolManagementUI", "SchoolManagementUI\SchoolManagementUI.csproj", "{6F30A8BD-C0DB-4795-A6F7-2C481E72D4E8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchoolManagementUI", "SchoolManagementUI\SchoolManagementUI.csproj", "{6F30A8BD-C0DB-4795-A6F7-2C481E72D4E8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

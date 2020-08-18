@@ -11,10 +11,10 @@ namespace Application_API_Core.Interfaces
         Task<object> GetStudentsAsync();
        // Student GetStudentById (Guid StudentId);
         Task<object> GetStudentByIdAsync(Guid StudentId);
-        Task RegisterStudent (Student student);
-        Task UpdateStudent (Guid StudentId, Student student);
-        void DeleteStudent (Guid StudentId);
-        Task<bool> IsStudentExist(string matricNumber);
+        Task RegisterStudentAsync (Student student);
+        Task UpdateStudentAsync (Guid StudentId, Student student);
+        Task DeleteStudentAsync (Guid StudentId);
+        Task<bool> IsStudentExistAsync(string matricNumber);
       
 
 

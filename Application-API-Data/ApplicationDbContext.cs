@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Application_API_Data
 {
@@ -104,8 +105,9 @@ namespace Application_API_Data
             };
         }
 
-
-
-
+        public Task SaveChangesAync()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

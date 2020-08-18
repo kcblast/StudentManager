@@ -44,43 +44,9 @@ namespace SchoolManagementUI.Controllers
             return View();
         }
 
-        //[HttpGet]
-        //[Route("Students")]
-        //public async Task<IActionResult> GetAllStudents()
-        //{
-        //    try
-        //    {
-        //        StudentDto studentDto = new StudentDto();
-        //        if (this.ModelState.IsValid)
-        //            using (var httpClient = new HttpClient())
-        //            {
-        //                httpClient.BaseAddress = new Uri(_apiRequestUri.BaseUri);
-        //                httpClient.DefaultRequestHeaders.Accept.Clear();
-        //                httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+      
 
-        //                var uri = _apiRequestUri.BaseUri + _apiRequestUri.GetStudents;
-        //                if (HttpContext.Request.QueryString.HasValue)
-        //                {
-        //                    uri = $"{uri}{HttpContext.Request.QueryString.ToString()}";
-        //                }
-        //                HttpResponseMessage res = await httpClient.GetAsync(uri);
 
-        //                if (res.IsSuccessStatusCode)
-        //                {
-        //                    var apiTask = res.Content.ReadAsStringAsync();
-        //                    var responseString = apiTask.Result;
-        //                    var model = JsonConvert.DeserializeObject<StudentDto>(responseString);
-
-        //                    return View(model);
-        //                }
-        //            }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw new Exception(ex.Message);
-        //    }
-        //    return View();
-        //}
 
 
 

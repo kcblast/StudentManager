@@ -28,7 +28,7 @@ C:\Users\admin\Documents\NewApplication\Application-API-Data\bin\Debug\netstanda
 C:\Users\admin\Documents\NewApplication\Application-API-Data\obj\Debug\netstandard2.0\Application-API-Data.csprojAssemblyReference.cache
 C:\Users\admin\Documents\NewApplication\Application-API-Data\obj\Debug\netstandard2.0\Application-API-Data.AssemblyInfoInputs.cache
 C:\Users\admin\Documents\NewApplication\Application-API-Data\obj\Debug\netstandard2.0\Application-API-Data.AssemblyInfo.cs
+C:\Users\admin\Documents\NewApplication\Application-API-Data\obj\Debug\netstandard2.0\Application-API-Data.csproj.CoreCompileInputs.cache
 C:\Users\admin\Documents\NewApplication\Application-API-Data\obj\Debug\netstandard2.0\Application-API-Data.csproj.CopyComplete
 C:\Users\admin\Documents\NewApplication\Application-API-Data\obj\Debug\netstandard2.0\Application-API-Data.dll
 C:\Users\admin\Documents\NewApplication\Application-API-Data\obj\Debug\netstandard2.0\Application-API-Data.pdb
-C:\Users\admin\Documents\NewApplication\Application-API-Data\obj\Debug\netstandard2.0\Application-API-Data.csproj.CoreCompileInputs.cache

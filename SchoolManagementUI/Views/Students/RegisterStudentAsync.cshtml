@@ -1,0 +1,39 @@
+﻿@model Application_API_Core.ViewModels.RegisterStudentDto
+
+@{
+
+    ViewData["Title"] = "RegisterStudentAsync";
+    Layout = "_Layout";
+}
+
+<div class="container">
+    <h3 class="display-4">Complete Registration</h3>
+    <form method="post" asp-action="RegisterStudentAsync" asp-controller="Students">
+        <div class="form-group">
+            <label asp-for="FirstName">First Name</label>
+            <input asp-for="FirstName" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="LastName">Last Name</label>
+            <input asp-for="LastName" class="form-control"/>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="MatricNumber">Matric Number</label>
+            <input asp-for="MatricNumber" class="form-control"/>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="StudentLevel">Student Level</label>
+            <input asp-for="StudentLevel" class="form-control"/>
+        </div>
+
+        <div class="form-group">
+            <input type="submit" value="Submit" class="btn btn-primary" />
+        </div>
+    </form>
+</div>
+    <div class="container">
+        <h3 class="display-4">Register here</h3>
+    </div>
